@@ -1,18 +1,18 @@
 
-.container {
+/* .container {
      width: clamp(400px, 75vw, 1200px); 
-     height: 50vw;
+     height: 100vw;
      
-}   
+}    */
 
 * {
-    font-size: 15pt;
+    font-size: 14pt;
 }
 
 .form {
   
     width: 50vw; 
-    margin:  auto;
+    margin: 30px auto;
     background-color: blueviolet;
     border: darkslategrey 2px dotted;
 }
@@ -26,3 +26,20 @@ background: white;
 color: black;
 width: 50vw;
 } 
+
+button {
+    
+}
+
+small {
+    display: none;
+}
+
+input:invalid + small {
+    display: inline;
+}
+
+/* p {
+    display: none;
+}
+] */

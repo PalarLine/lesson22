@@ -1,4 +1,31 @@
 
+
+//  
+
+// function check() {
+//     let txt = '';
+//     if (document.getElementById('weightInput').validity.rangeOverflow) {
+//         txt = "over";
+
+//     }
+//     document.getElementById('txt').innerHTML = txt;
+// }
+    
+
+// 
+
+// document.querySelector('form-control').addEventListener('keypress', function(){
+//     this.value = this.value.replace(/[^0]$/g, '');
+// });
+
+// let x = document.querySelector("#weightInput");
+// let y = document.querySelector("#heightInput");
+
+// if (x <= 0 && y <= 0) {
+    
+//         alert(`uncorrect`);
+// } else {
+
 function bodyMassIndexCalculation() {
 
     let weight = +weightInput.value;
@@ -6,7 +33,10 @@ function bodyMassIndexCalculation() {
 
     if (height > 3) {
         height = height / 100
+
     }
+
+    if ((weight > 0 && height > 0) && (weight <= 250 && height < 3.01))  {
         
     let index = (Math.round((weight / (height ** 2) *10))) / 10; 
 
@@ -27,11 +57,26 @@ function bodyMassIndexCalculation() {
                             indexDescription.innerHTML = 'Ваш индекс массы тела говорит, что у вас ожирение второй степени! Запишитесь на прием к диетологу. ';
 
                             }                         
-                            else  {indexDescription.innerHTML = 'Ваш индекс массы тела говорит, что у вас ожирение третьей степени! Скорее всего, вы нуждаетесь в медицинской помощи.';
+                                else  {indexDescription.innerHTML = 'Ваш индекс массы тела говорит, что у вас ожирение третьей степени! Скорее всего, вы нуждаетесь в медицинской помощи.';
+                                }
+                            } 
+
+                        else {
+
+                            alert(`alarm`);
                         }
-   
+                    }
+                    
+                        
+
+function clearFilds() {
+     document.getElementById('weightInput').value = "";
+     document.getElementById('heightInput').value = "";
+     indexDescription.innerHTML = "";
+     indexValue.innerHTML = "";
+      
 }
 
-    
+
 
 
