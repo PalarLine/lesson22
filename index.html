@@ -31,7 +31,7 @@
                         autofocus
                         pattern="^[1-9]{1,3}$"
                         />
-                        <small id="txt"  class="form-text text-muted">Вы уверены, что правильно ввели значение? </small>
+                        <!-- <small id="txt"  class="form-text text-muted">Вы уверены, что правильно ввели значение? </small> -->
                         
                     
             </div>
@@ -39,6 +39,7 @@
                     <label for="heightInput" class="col-form-label mb-2">Введите рост, м.</label>
                     
                         <input 
+                        
                         type="number"
                         class="form-control" 
                         id="heightInput"
@@ -47,15 +48,19 @@
                         step="0.01"
                         placeholder="Например: 1,70"
                         pattern="^[0-1]{1}[,\.][0-9]{1,4}[^-]$"                           />
-                        <small class="form-text text-muted">Вы уверены, что правильно ввели значение?</small>
+                        <!-- <small class="form-text text-muted">Вы уверены, что правильно ввели значение?</small> -->
                         
             </div>
             <div>
                 <br>
-                <input onclick='bodyMassIndexCalculation()' type="submit" class="btn btn-success" name="submit" value="Go">
+                <div class="alert alert-warning alert-dismissible fade show d-none" id="messAlert" role="alert">
+                    <strong>Упс!</strong> Похоже,что вы ввели неправильные данные. Попробуйте еще раз!.
+                    <button onclick="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <input onclick='bodyMassIndexCalculation()' type="submit" class="btn btn-success" id="buttonGo" name="submit"  value="Go"> 
             </div>
         </div>
-            <div class="row row-cols-1 w-100 my-5">
+            <div class="row row-cols-1 w-100 my-5 d-none" id="description" >
                         <p > Ваш индекс массы тела: <br> <output id=indexValue>?</output></p>
                         <p >Это означает: <br> <output id=indexDescription>?</output> </p>
             </div>
@@ -64,7 +69,9 @@
                         <button onclick="bodyMassIndexCalculation()" class="btn btn-primary" type="button">Рассчитать!</button>
                     </div> -->
                     <button onclick="clearFilds()" class="btn btn-primary w-100" type="reset" value="Reset">Ввести новые данные!</button>
-        </div>        
+        </div>    
+        
+        
 
         <!-- <dialog open="">    
            
@@ -72,7 +79,19 @@
            <p >Это означает:  <output id=indexDescription></output> </p>
         </dialog>
         
-     -->
+     --><script>
+        // let checkValue = document.getElementById('heightInput')
+        // checkValue.addEventListener('input', (e) => {
+        // let regexp = /^[0-2]{1}[,/.][0-9]{1,4}[^-]$/
+        // let str = e.target.value
+
+        // let result = regexp.test(str)
+        // console.log(result);
+
+        // })
+
+       
+    </script>
      
 </body>
 </html>

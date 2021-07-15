@@ -17,17 +17,11 @@
     border: darkslategrey 2px dotted;
 }
 
-dialog {
-/* margin: auto;  */
+/* .alert {
+    z-index: 2;
+} */
 
-border:  darkslategrey 2px dotted;
-
-background: white;
-color: black;
-width: 50vw;
-} 
-
-button {
+/* button {
     
 }
 
@@ -37,7 +31,7 @@ small {
 
 input:invalid + small {
     display: inline;
-}
+} */
 
 /* p {
     display: none;
