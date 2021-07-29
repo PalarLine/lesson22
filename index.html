@@ -8,38 +8,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js"></script>
+    
 </head>
 <body>
-    <div class="container bg-info mt-2 pb-2">
-        <h1 class="text-center pt-3 text-white">Расчет индекса массы тела
-        </h1>
-        <div class="form bg-light mt-3 p-3">
-            <div class="row row-cols-1 row-cols-lg-2">
+        <div class="container bg-info mt-2 pb-2">
+            <h1 class="text-center pt-3 text-white">Расчет индекса массы тела
+            </h1>
+                <div class="form bg-light mt-3 p-3">
 
-            <div class="form-group">
-            
-                    <label for="weightInput" class="col-form-label  mb-2">Введите вес, кг.</label>
-                    
-                        <input                        
+                        <label for="weightInput" class="col-form-label  mb-2">Введите вес, кг.</label>
+                        <input                                                
                         type="number"
                         class="form-control" 
                         id="weightInput"
-                        min="1"
-                        max="250"
+                        min="5"
+                        max="700"
                         step="0.5"
                         placeholder="Например: 60" 
                         autofocus
-                        pattern="^[1-9]{1,3}$"
                         />
-                        <!-- <small id="txt"  class="form-text text-muted">Вы уверены, что правильно ввели значение? </small> -->
-                        
-                    
-            </div>
-            <div class="form-group">
-                    <label for="heightInput" class="col-form-label mb-2">Введите рост, м.</label>
-                    
+                                               
+                        <label for="heightInput" class="col-form-label my-2">Введите рост, м.</label>
                         <input 
-                        
+                        oninput='bodyMassIndexCalculation()'                        
                         type="number"
                         class="form-control" 
                         id="heightInput"
@@ -47,51 +38,16 @@
                         max="2.4"
                         step="0.01"
                         placeholder="Например: 1,70"
-                        pattern="^[0-1]{1}[,\.][0-9]{1,4}[^-]$"                           />
-                        <!-- <small class="form-text text-muted">Вы уверены, что правильно ввели значение?</small> -->
-                        
-            </div>
-            <div>
-                <br>
-                <div class="alert alert-warning alert-dismissible fade show d-none" id="messAlert" role="alert">
-                    <strong>Упс!</strong> Похоже,что вы ввели неправильные данные. Попробуйте еще раз!.
-                    <button onclick="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                <input onclick='bodyMassIndexCalculation()' type="submit" class="btn btn-success" id="buttonGo" name="submit"  value="Go"> 
-            </div>
-        </div>
-            <div class="row row-cols-1 w-100 my-5 d-none" id="description" >
-                        <p > Ваш индекс массы тела: <br> <output id=indexValue>?</output></p>
-                        <p >Это означает: <br> <output id=indexDescription>?</output> </p>
-            </div>
-                    <!-- </div>  
-                    <div class="d-grid gap-2 col-12 mx-auto my-3">
-                        <button onclick="bodyMassIndexCalculation()" class="btn btn-primary" type="button">Рассчитать!</button>
-                    </div> -->
-                    <button onclick="clearFilds()" class="btn btn-primary w-100" type="reset" value="Reset">Ввести новые данные!</button>
-        </div>    
+                        />
+                                                  
+                        <div class="my-3 " id="description" >
+                            <p> Ваш индекс массы тела: <br> <output id=indexValue></output></p>
+                            <p> Это означает: <br> <output id=indexDescription></output> </p>
+                        </div>
+                    
+                        <button onclick="clearFilds()" class="btn btn-primary w-100">Ввести новые данные!</button>
+                </div>
+        </div> 
         
-        
-
-        <!-- <dialog open="">    
-           
-           <p > Ваш индекс массы тела:  <output id=indexValue>-</output> </p>
-           <p >Это означает:  <output id=indexDescription></output> </p>
-        </dialog>
-        
-     --><script>
-        // let checkValue = document.getElementById('heightInput')
-        // checkValue.addEventListener('input', (e) => {
-        // let regexp = /^[0-2]{1}[,/.][0-9]{1,4}[^-]$/
-        // let str = e.target.value
-
-        // let result = regexp.test(str)
-        // console.log(result);
-
-        // })
-
-       
-    </script>
-     
-</body>
+    </body>
 </html>
